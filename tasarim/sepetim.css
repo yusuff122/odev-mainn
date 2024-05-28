@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#sayfaBasligi {
+  cursor: pointer;
+}
+
+.urunler {
+  width: 80%;
+}
+
+.urunler h2 {
+  text-align: center;
+}
+
+.urunler ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.urunler ul li {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 200px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.urunler ul li img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.urunler ul li h3 {
+  margin-top: 10px;
+}
+
+.urunler ul li p {
+  margin-top: 5px;
+}
+
+.urunler ul li .fiyat {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.urunler ul li .kaldir {
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.urunler ul li .kaldir:hover {
+  background-color: #cc0000;
+}
+
+.tab-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.tab-bar li {
+  float: left;
+}
+.tab-bar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.tab-bar li a:hover {
+  background-color: #111;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}

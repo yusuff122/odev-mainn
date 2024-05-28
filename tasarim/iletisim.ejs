@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="/tasarim/iletisim.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+    <header>
+
+        <ul class="tab-bar">
+          <li ><a class="active" href="/">Anasayfa
+            <i class="fas fa-home"></i>
+          </a></li>
+          <li><a href="/sepetim">sepetim
+            <i class="fas fa-shopping-cart" style="margin-right: 5px;"></i>
+          </a>
+           
+          </li>
+          <li><a href="/iletisim">iletişim
+            <i class="fas fa-phone-square-alt"></i>
+          </a></li>
+          
+          <li><a href="/hakimizda">Hakkımızda
+            <i class="fas fa-user"></i>
+          </a></li>
+        </ul>
+    
+        <div style="display: flex; align-items: center; justify-content: center; ">
+          <img src="/images/logo.jpeg " style="width: 55px; height: 60px; border-radius: 70px; margin-right: 10px;" alt="Firdevs Giyim">
+        <h1 id="sayfaBasligi">Stil Durağı</h1>
+        </div>
+    
+       
+      </header>
+    <div class="contact-container">
+        <div class="form-section">
+            <h2 style="margin-left: 50px;">İletişime Geçin</h2>
+            <form id="contact-form">
+                <div class="input-group" style="display: flex; margin-left: 50px;">
+                    <input type="email" id="email" name="email" placeholder="E-posta" style="margin-right: 10px; width: 170px; margin-top: 20px">
+                    
+                    <input type="text" id="name" name="name" placeholder="Ad" style="width: 170px; margin-top: 20px">
+                </div>
+                <input type="text" id="subject" name="subject" placeholder="Konu" style="width: 350px; margin-left: 50px; margin-top: 3%"><br>
+                <textarea id="message" name="message" placeholder="Mesajınız" style="width: 350px; margin-left: 50px; margin-top: 30px; height: 200px;"></textarea><br>
+                <button type="submit">Mesaj Gönder</button>
+            </form>
+        </div>
+
+        <div class="info-section">
+            <h2>Bize Ulaşın</h2>
+            <p style="margin-top: 50px;">
+                
+                <i class="fas fa-map-marker-alt" style="margin-right: 5px; font-size: 20px; color: aliceblue;" ></i>
+                  Adres: 198 West 21th Street, Suite 721 New York NY  10016</p>
+            <p style="margin-top: 50px;">
+                <i class="fas fa-phone phone-icon"></i>
+                Telefon: +1235 2355 98</p>
+
+            <p style="margin-top: 50px;">
+                <i class="fas fa-envelope" style="margin-right: 5px;"></i>
+                E-posta: info@yoursite.com</p>
+
+            <p style="margin-top: 50px;">
+                <i class="fas fa-globe" style="margin-right: 5px;"></i>
+                Web Sitesi: yoursite.com</p>
+        </div>
+    </div>
+</body>
+</html>

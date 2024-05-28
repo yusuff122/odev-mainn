@@ -1,0 +1,263 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.tab-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.tab-bar li {
+  float: left;
+}
+.tab-bar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.tab-bar li a:hover {
+  background-color: #111;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#arama {
+  width: 50%; 
+  height: 40px; 
+  border-radius: 20px;
+  padding: 5px 10px; 
+  border: none;
+  outline: none; 
+  }
+
+.urunler {
+  flex: 1;
+  margin: 20px;
+  display: flex;
+}
+
+.urunler h2 {
+  margin-top: 0;
+}
+
+.urunler ul {
+  list-style: none;
+  padding: 0;
+}
+
+.urunler ul li {
+ display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 200px;
+  height: 250px; 
+  border-radius: 10px; 
+}
+
+.urunler ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.urunler ul li img {
+  width: 100%;
+  height: 100%;
+}
+
+.urunler ul li h3 {
+  margin-top: 10px;
+}
+
+.urunler ul li p {
+  margin-top: 5px;
+}
+
+.urunler ul li .fiyat {
+  font-weight: bold;
+  margin-bottom: 10px;
+
+}
+.urunler ul li .renk {
+  font-weight: bold;
+  padding: 100px;
+  
+}
+
+.filtreler {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.filtreler h2 {
+  margin-top: 0;
+}
+
+.filtreler .form-group {
+  margin-bottom: 15px;
+}
+
+.filtreler label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.filtreler select,
+
+.filtreler button {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.filtreler button {
+  margin-top: 10px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.filtreler button:hover {
+  background-color: #555;
+}
+.arama-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+#arama {
+  width: 50%; 
+  height: 40px; 
+  border-radius: 20px;
+  padding: 5px 10px; 
+  border: none;
+  outline: none; 
+  margin-left: 20px;
+}
+
+.sepete-git-button {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  width: 170px;
+  border: none;
+  padding: 10px 10px;
+  margin-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #108106;
+  font-size: 20px;
+}
+
+.sepete-git-button i {
+  margin-left: 15px;
+  color: white;
+}
+
+.sepete-git-button:hover {
+  background-color: #555;
+}
+
+.iletisim {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 150px;
+  margin-left: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.iletisim:hover {
+  background-color: #0056b3;
+}
+.social-icons {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-icons img {
+  width: 32px;
+  height: 32px;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container-alt {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: black;
+  color: white;
+
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+ 
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+.main-alt {
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+main p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  
+}
+
+footer p {
+  font-size: 12px;
+  color: #999;
+}

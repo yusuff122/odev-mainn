@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/tasarim/urun_detay.css" type="text/css">
+  <title>Ürün Detayı</title>
+</head>
+<body>
+  <header>
+    
+  </header>
+  <main>
+    
+    <ul class="urun-detay">
+      <h2 id="urun-adi"><%= urun.urun_adi %></h2>
+      <img id="urun-resim" src="data:image/jpeg;base64,<%= base64Image %>" alt="Product Image">
+      <div class="urun-ozellikleri">
+        <p id="urun-aciklama"><%= urun.aciklama %></p>
+        <hr>
+        <span class="beden">Beden: <span id="urun-beden"><%= urun.beden %></span></span>
+        <hr>
+        <span class="cinsiyet">Cinsiyet: <span id="urun-cinsiyet"><%= urun.cinsiyet %></span></span>
+        <hr>
+        <span class="fiyat">Fiyat: <span id="urun-fiyat"><%= urun.fiyat %></span> TL</span>
+        <hr>
+        <button type="button" class="sepeteEkle" id="sepeteEkle">Sepete ekle</button>
+      </div>
+    </ul>
+  </main>
+  <footer>
+  </footer>
+
+<script>
+  document.getElementById("sepeteEkle").addEventListener("click", function() {
+    var urunAdi = document.getElementById("urun-adi").innerText;
+    var urunResim = document.getElementById("urun-resim").src;
+    var urunAciklama = document.getElementById("urun-aciklama").innerText;
+    var urunBeden = document.getElementById("urun-beden").innerText;
+    var urunCinsiyet = document.getElementById("urun-cinsiyet").innerText;
+    var urunFiyat = document.getElementById("urun-fiyat").innerText;
+
+    var urun = {
+      ad: urunAdi,
+      resim: urunResim,
+      aciklama: urunAciklama,
+      beden: urunBeden,
+      cinsiyet: urunCinsiyet,
+      fiyat: urunFiyat
+    };
+
+    var sepet = JSON.parse(localStorage.getItem("sepet")) || [];
+
+    sepet.push(urun);
+
+    localStorage.setItem("sepet", JSON.stringify(sepet));
+
+    alert("Ürün sepete eklendi!");
+  });
+</script>
+
+</body>
+</html>

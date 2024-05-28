@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sepetim</title>
+  <link rel="stylesheet" href="/tasarim/sepetim.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+  <header>
+
+    <ul class="tab-bar">
+      <li ><a class="active" href="/">Anasayfa
+        <i class="fas fa-home"></i>
+      </a></li>
+      <li><a href="/sepetim">sepetim
+        <i class="fas fa-shopping-cart" style="margin-right: 5px;"></i>
+      </a>
+       
+      </li>
+      <li><a href="/iletisim">iletişim
+        <i class="fas fa-phone-square-alt"></i>
+      </a></li>
+      <li><a href="/hakimizda">Hakkımızda
+        <i class="fas fa-user"></i>
+      </a></li>
+    </ul>
+
+    <div style="display: flex; align-items: center; justify-content: center; ">
+      <img src="/images/logo.jpeg " style="width: 55px; height: 60px; border-radius: 70px; margin-right: 10px;" alt="Firdevs Giyim">
+    <h1 id="sayfaBasligi">Stil Durağı</h1>
+    </div>
+
+   
+  </header>
+  <main>
+    <section class="urunler">
+      <h2>Sepetim</h2>
+      <ul id="sepet-listesi">
+      </ul>
+    </section>
+  </main>
+  <footer>
+  </footer>
+
+  <script>
+    function sepetListesiniOlustur() {
+      const sepetListesiUl = document.getElementById('sepet-listesi');
+      sepetListesiUl.innerHTML = '';
+
+      const sepetListesi = JSON.parse(localStorage.getItem('sepet')) || [];
+
+      sepetListesi.forEach(function(urun, index) {
+        const urunLi = document.createElement('li');
+        urunLi.innerHTML = `
+          
+            <img src="${urun.resim}" alt="${urun.ad}" style="width: 100px; height: auto;">
+            <h3>${urun.ad}</h3>
+            <p>${urun.aciklama}</p>
+            <span class="fiyat">${urun.fiyat} TL</span>
+          
+          <button type="button" class="kaldir" data-id="${index}">Kaldır</button>
+        `;
+
+        sepetListesiUl.appendChild(urunLi);
+      });
+
+      document.querySelectorAll('.kaldir').forEach(button => {
+        button.addEventListener('click', function() {
+          const urunId = this.getAttribute('data-id');
+          kaldir(urunId);
+        });
+      });
+    }
+
+    function kaldir(urunId) {
+      let sepetListesi = JSON.parse(localStorage.getItem('sepet')) || [];
+      
+      sepetListesi.splice(urunId, 1);
+      
+      localStorage.setItem('sepet', JSON.stringify(sepetListesi));
+      
+      sepetListesiniOlustur();
+    }
+
+    document.addEventListener('DOMContentLoaded', sepetListesiniOlustur);
+  </script>
+</body>
+</html>

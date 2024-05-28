@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title >Stil Durağı</title>
+  <link rel="stylesheet" href="/tasarim/urunler.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body> 
+    <script src="index.js"></script>
+    
+  <header>
+
+    <ul class="tab-bar">
+      <li ><a class="active" href="/">Anasayfa
+        <i class="fas fa-home"></i>
+      </a></li>
+      <li><a href="/sepetim">sepetim
+        <i class="fas fa-shopping-cart" style="margin-right: 5px;"></i>
+      </a>
+       
+      </li>
+      <li><a href="/iletisim">iletişim
+        <i class="fas fa-phone-square-alt"></i>
+      </a></li>
+      <li><a href="/hakimizda">Hakkımızda
+        <i class="fas fa-user"></i>
+      </a></li>
+    </ul>
+
+    <div style="display: flex; align-items: center; justify-content: center; ">
+      <img src="/images/logo.jpeg " style="width: 55px; height: 60px; border-radius: 70px; margin-right: 10px;" alt="Firdevs Giyim">
+    <h1 id="sayfaBasligi">Stil Durağı</h1>
+    
+
+    </div>
+
+    
+
+   <div class="arama-container" >
+    
+  
+    <input type="text" id="arama" name="arama" autocomplete="off" placeholder="Ürün arayın...">
+    
+
+   </div>
+
+     
+      
+   
+   
+  </header>
+  <main>
+    <section class="urunler">
+      <h2>Ürünler</h2>
+
+      <ul>
+        <% urunler.forEach(function(urun, index) { %>
+        
+          <li>
+            <a href="/urun_detay/<%= urun.id %>">
+                <img src="data:image/jpeg;base64,<%= base64Images[index] %>" alt="Product Image">          
+              <h3><%= urun.urun_adi %></h3>
+              <p><%= urun.aciklama %></p>
+              <span class="fiyat"><%= urun.fiyat %> TL</span>
+            </a>
+          </li>
+        <% }); %>
+   
+    
+
+      </ul>
+
+
+
+    </section>
+    <section class="filtreler">
+      <h2>Filtreler</h2>
+      <form action="/", method="get">
+        <label for="kategori" style="margin-top: 5px;">Kategori:</label>
+        <select id="kategori" name="kategori" style="margin-top: 5px;">
+          <option value="">Tümü</option>
+          <option value="Gömlek">Gömlek</option>
+          <option value="Pantolon">pantolon</option>
+          <option value="Kazak">Kazak</option>
+          <option value="">Çorap</option>
+          <option value="eşofman">Eşofman</option>
+        </select>
+
+       
+
+        <label for="fiyat" style="margin-top: 15px;">Fiyat Aralığı:</label>
+       <select id="fiyat" name="fiyat">
+        <option value="">Tümü</option>
+        <option value="0-100">0 - 100 TL</option>
+          <option value="100-200">100 - 200 TL</option>
+          <option value="200-500">200 - 500 TL</option>
+          <option value="500-1000">500 - 1000 TL</option>
+          <option value="1000">+1000 TL</option>
+       </select>
+    
+        <button type="submit" id="myButton"  style="margin-top: 15px; height: 40px;">Filtrele</button>
+
+        
+        <script>
+          document.getElementById("myButton").addEventListener("click", function() {
+              location.reload(); 
+              
+          });
+          
+          const pageTitle = document.getElementById('sayfaBasligi');
+           pageTitle.addEventListener('click', function()  {
+            window.location.href = "/";
+           } )
+
+          const aramaInput = document.getElementById('arama');
+          aramaInput.addEventListener('input', function() {
+            const aramaMetni = aramaInput.value.toLowerCase();
+            const urunlerListesi = document.querySelector('.urunler ul');
+            const urunler = urunlerListesi.querySelectorAll('li');
+      
+            urunler.forEach(function(urun) {
+              const baslik = urun.querySelector('h3').textContent.toLowerCase();
+              const aciklama = urun.querySelector('p').textContent.toLowerCase();
+              if (baslik.includes(aramaMetni) || aciklama.includes(aramaMetni)) {
+                urun.style.display = 'inline-block';
+              } else {
+                urun.style.display = 'none';
+              }
+            });
+          });
+
+          document.addEventListener('DOMContentLoaded', function() {
+            const sepeteGitButton = document.getElementById('sepeteGitButton');
+            sepeteGitButton.addEventListener('click', function() {
+              window.location.href = "/sepetim"; 
+            });
+          });
+          
+          document.addEventListener('DOMContentLoaded', function() {
+            const sepeteGitButton = document.getElementById('iletisim');
+            sepeteGitButton.addEventListener('click', function() {
+              window.location.href = "/iletisim"; 
+            });
+          });
+
+      </script>
+      </form>
+    </section>
+  </main>
+  <div class="container-alt">
+    <header>
+        <h1>Code Opacity</h1>
+    </header>
+
+    <main class="main-alt">
+        <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione versam  <br> amet   autem sunt, perspiciatis nemo <br></p>
+      
+        <div class="social-icons">
+          
+          <i class="fab fa-facebook-square"></i>
+            </a>
+
+            <a href="https://www.instagram.com/">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://www.google.com/">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="https://www.linkedin.com/">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/">
+              <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy;2024 CodeOpacity. Design By YUSUF_B</p>
+    </footer>
+</div>
+
+</body>
+</html>
