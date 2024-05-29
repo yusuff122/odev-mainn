@@ -7,7 +7,6 @@ const tasarim = path.join(__dirname,'../tasarim')
 const fs = require('fs');
 const port = process.env.PORT || 3000;
 
-
 app.listen(port, () => {
   console.log('uygulama başarılı bir şekilde açılıyor ');
 });
