@@ -1,4 +1,5 @@
 
+
 require('dotenv').config();
 const express = require("express")
 const app = express()
@@ -73,7 +74,7 @@ client.connect()
   app.get("/", async (req, res) => {
     try {
         let query = 'SELECT * FROM urunler WHERE 1=1'; 
-
+        
         const kategori = req.query.kategori;
         const fiyat = req.query.fiyat;
 
@@ -99,6 +100,7 @@ client.connect()
 
         const result = await client.query(query);
         const urunler = result.rows;
+        console.log(result.rows);
         const base64Images = urunler.map(urun => {
             return urun.fotograf.toString('base64');
         });
