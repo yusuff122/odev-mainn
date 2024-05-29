@@ -36,7 +36,6 @@ const client = new Client({
 client.connect()
     .then(() => console.log('PostgreSQL veritabanına bağlandı'))
     .catch(err => console.error('Bağlantı hatası', err));
-
     app.post('/', (req, res) => {
       
   });
@@ -60,6 +59,7 @@ client.connect()
         
         try {
             const result = await client.query('SELECT * FROM urunler WHERE id = $1', [urunId]);
+            console.log(result);
             const urun = result.rows[0];
             const base64Image = urun.fotograf.toString('base64');
             console.log(urun);
