@@ -1,5 +1,8 @@
 {
   "main": "index.js",
+  "engines": {
+    "node": ">=20.0.0 <21.0.0"
+  },
   "scripts": {
     "start": "node /src/index.js",
     "build": "npm i"
@@ -9,6 +12,7 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "fs": "^0.0.1-security",
+    "mongodb": "^6.7.0",
     "nodemon": "^3.1.0",
     "path": "^0.12.7",
     "pg": "^8.11.5"
